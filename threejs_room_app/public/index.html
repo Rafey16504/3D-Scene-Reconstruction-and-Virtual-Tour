@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    #overlay {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0,0,0,0.5);
+        padding: 15px 20px;
+        border-radius: 10px;
+        color: white;
+        font-family: Arial, sans-serif;
+        z-index: 10;
+        max-width: 300px;
+        backdrop-filter: blur(4px);
+    }
+
+    #overlay h1 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #overlay p {
+        margin: 0;
+        line-height: 1.4em;
+        font-size: 14px;
+    }
+</style>
+
+  <meta charset="utf-8" />
+  <title>Three.js Room Viewer</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #202020; }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.159.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+<div id="overlay">
+    <h1>3D Virtual Tour</h1>
+    <p>
+        <strong>Controls:</strong><br>
+        • Rotate view: Left Mouse (Orbit mode)<br>
+        • Zoom: Mouse Wheel<br>
+        • Move (Walk mode): W A S D<br>
+        • Look around: Move Mouse (when in Walk mode)<br>
+        • Toggle Walk Mode: <strong>F</strong><br>
+        • Teleport to Camera Point: <strong>Click green spheres</strong><br>
+    </p>
+</div>
+
+<script type="module">
+
+    import * as THREE from "https://unpkg.com/three@0.159.0/build/three.module.js";
+    import { GLTFLoader }
+        from "https://unpkg.com/three@0.159.0/examples/jsm/loaders/GLTFLoader.js";
+    import { OrbitControls }
+        from "https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js";
+
+    import { 
+        setLibs, 
+        init,
+        loadModel, 
+        loadCameras,
+        animate
+    } from "./app.js";
+
+    setLibs(THREE, GLTFLoader, OrbitControls);
+
+    init();
+    loadModel();
+    loadCameras();
+    animate();
+
+</script>
+
+
+
+</body>
+</html>
