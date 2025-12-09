@@ -1,3 +1,25 @@
 final_sfm.ply
 models/
 two_view_cloud.ply
+
+# Node / build files
+node_modules/
+dist/
+build/
+.cache/
+
+# Large Three.js assets
+threejs_room_app/model/*.glb
+threejs_room_app/model/*.gltf
+threejs_room_app/textures/
+threejs_room_app/public/images/
+threejs_room_app/public/pointclouds/
+threejs_room_app/public/model/*.glb
+
+
+# Logs
+*.log
+
+# System
+.DS_Store
+Thumbs.db
