@@ -1,0 +1,48 @@
+\documentclass[10pt, twocolumn, letterpaper]{article}
+
+% --- STANDARD PACKAGES ---
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+% --- GEOMETRY (CVPR Style) ---
+\usepackage[top=2cm, bottom=2.5cm, left=1.8cm, right=1.8cm, columnsep=0.7cm]{geometry}
+
+% --- TITLE ---
+\title{\textbf{3D Scene Reconstruction and Virtual Tour}}
+
+\author{
+    Abdul Rafey \\
+    {\tt\small 26100077@lums.edu.pk}
+    \and
+    Abdul Hadi \\
+    {\tt\small 26100075@lums.edu.pk}
+    \vspace{5mm} \\
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% --- SECTIONS ---
+% We use \input to keep main.tex clean
+\input{sections/0_abstract}
+\input{sections/1_introduction}
+\input{sections/2_methodology}
+\input{sections/3_virtual_tour}
+\input{sections/4_experiments}
+\input{sections/5_discussion}
+\input{sections/6_conclusion}
+
+% --- BIBLIOGRAPHY ---
+{\small
+\bibliographystyle{ieee}
+\bibliography{references}
+}
+
+\end{document}

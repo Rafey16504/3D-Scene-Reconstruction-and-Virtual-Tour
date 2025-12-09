@@ -1,0 +1,25 @@
+\section{Conclusion}
+
+In this project, we built a system for 3D scene reconstruction and interactive visualization. We captured photographs of an indoor scene, reconstructed a 3D point cloud using professional photogrammetry software, and created a web-based viewer for the result.
+
+Our approach involved:
+\begin{enumerate}
+    \item Implementing a basic Structure from Motion pipeline to understand 3D reconstruction
+    \item Recognizing the limitations of basic SfM and switching to professional tools (Agisoft MetaShape)
+    \item Capturing additional images to improve reconstruction quality
+    \item Building a Three.js application for interactive 3D visualization with mouse and keyboard controls
+\end{enumerate}
+
+\subsection{Key Takeaways}
+\begin{itemize}
+    \item Professional photogrammetry tools produce much better results than basic computer vision implementations
+    \item More images and diverse viewpoints improve reconstruction quality
+    \item Web-based 3D visualization is practical and accessible
+\end{itemize}
+
+\subsection{Limitations}
+\begin{itemize}
+    \item The application was developed and tested only on our desktop system
+    \item No formal user testing or evaluation was performed
+    \item The quality of reconstruction depends heavily on image capture and camera coverage
+\end{itemize}

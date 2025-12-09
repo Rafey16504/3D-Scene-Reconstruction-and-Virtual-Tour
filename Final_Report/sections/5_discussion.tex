@@ -1,0 +1,29 @@
+\section{Discussion}
+
+\subsection{What We Learned}
+Our initial attempt at Structure from Motion gave us insight into the complexities of 3D reconstruction from images. While our implementation worked in principle, the results were not satisfactory. This led us to use professional photogrammetry software, which handled many details automatically.
+
+We found that:
+\begin{itemize}
+    \item Professional tools like Agisoft MetaShape are significantly better than basic two-view reconstruction for practical use
+    \item More images and better coverage lead to higher quality results
+    \item The quality of the 3D reconstruction heavily depends on image quality and camera coverage
+\end{itemize}
+
+\subsection{Why Initial Results Were Poor}
+Our initial SfM pipeline produced a sparse, low-quality point cloud because:
+\begin{itemize}
+    \item We only used two-view reconstruction instead of multi-view
+    \item There was no global optimization or bundle adjustment
+    \item The limited number of images meant poor coverage of the scene
+\end{itemize}
+
+These issues were resolved by using MetaShape and capturing more images.
+
+\subsection{Impact of More Images}
+Capturing additional images from diverse viewpoints significantly improved the reconstruction quality. More images provided:
+\begin{itemize}
+    \item Better coverage of the entire scene
+    \item More constraints for bundle adjustment
+    \item Redundancy that helps filter out errors
+\end{itemize}

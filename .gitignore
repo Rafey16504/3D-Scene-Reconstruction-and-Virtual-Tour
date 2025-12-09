@@ -1,6 +1,4 @@
-final_sfm.ply
 models/
-two_view_cloud.ply
 
 # Node / build files
 node_modules/

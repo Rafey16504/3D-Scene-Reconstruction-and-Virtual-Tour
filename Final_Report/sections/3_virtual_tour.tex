@@ -1,0 +1,24 @@
+\section{Virtual Tour Application}
+
+\subsection{Three.js Visualization}
+We developed a web-based 3D viewer using Three.js, a JavaScript library for 3D graphics. The application loads the PLY point cloud and displays it in a WebGL-based 3D view.
+
+\subsection{User Controls}
+The application provides mouse and keyboard controls for navigation:
+\begin{itemize}
+    \item \textbf{Mouse controls}: Left-click and drag to rotate the view around the point cloud
+    \item \textbf{Zoom}: Mouse scroll wheel to zoom in and out
+    \item \textbf{Keyboard navigation}: Arrow keys and other keyboard shortcuts for movement
+\end{itemize}
+
+These controls allow users to freely explore the reconstructed 3D environment from different angles and distances.
+
+\subsection{Implementation}
+The application is built with:
+\begin{itemize}
+    \item \textbf{Frontend}: Three.js for 3D rendering, HTML5 for UI
+    \item \textbf{Backend}: Express.js server for serving the application
+    \item \textbf{Data format}: PLY point cloud files with vertex colors
+\end{itemize}
+
+The application runs smoothly on our desktop system with responsive interaction and real-time rendering of the point cloud.

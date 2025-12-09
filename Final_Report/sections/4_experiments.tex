@@ -1,0 +1,41 @@
+\section{Results and Implementation}
+
+
+\subsection{Point Cloud Quality}
+The reconstruction quality improved significantly through our workflow:
+
+\begin{enumerate}
+    \item \textbf{Initial SfM attempt}: Produced a sparse, low-quality point cloud with many gaps and inconsistencies
+    
+    \item \textbf{MetaShape on original images}: Generated a much better point cloud, but still had some areas with poor coverage
+    
+    \item \textbf{MetaShape on expanded image set}: The additional images provided better scene coverage and more redundancy for reconstruction. The final point cloud was significantly better in density and consistency
+\end{enumerate}
+
+\subsection{Virtual Tour Application}
+The Three.js application successfully displays the point cloud and allows interactive navigation. The application features:
+
+\begin{itemize}
+    \item Real-time 3D rendering of the point cloud
+    \item Mouse and keyboard controls for camera movement
+    \item Smooth interaction on our desktop system
+    \item Responsive zoom and rotation controls
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.45\columnwidth]{sections/figures/feature_matches.png}
+        \\
+        (a) Feature matching results
+        \\
+        \includegraphics[width=0.45\columnwidth]{sections/figures/two_view_cloud.png}
+        \\
+        (b) Initial two-view reconstruction \\
+        \includegraphics[width=0.45\columnwidth]{sections/figures/final_sfm_cloud.png} &
+        \\
+        (c) Final point cloud after MetaShape refinement
+    \end{tabular}
+    \caption{Reconstruction results: (a) SIFT feature matches between consecutive images. (b) Sparse point cloud from our two-view reconstruction pipeline. (c) Final high-quality point cloud after using MetaShape on an expanded image set. (The cloud doesn't look as good since it was done on matplotlib, the visualization in the notebook using open3d is much better to look at)}
+    \label{fig:reconstruction_results}
+\end{figure}

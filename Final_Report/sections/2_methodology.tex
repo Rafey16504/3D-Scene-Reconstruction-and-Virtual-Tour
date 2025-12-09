@@ -1,0 +1,30 @@
+\section{Methodology}
+
+\subsection{Initial Approach: Structure from Motion}
+We implemented a basic Structure from Motion pipeline to reconstruct 3D from two images. The process involved:
+
+\begin{itemize}
+    \item \textbf{Feature Detection}: Using SIFT to detect keypoints in images
+    \item \textbf{Feature Matching}: Matching keypoints between image pairs using FLANN-based matching with Lowe's ratio test
+    \item \textbf{Essential Matrix}: Estimating the Essential Matrix using RANSAC to find the geometric relationship between camera views
+    \item \textbf{Camera Pose}: Recovering rotation and translation matrices from the Essential Matrix decomposition
+    \item \textbf{Triangulation}: Computing 3D point positions from matched features across views
+\end{itemize}
+
+The initial two-view reconstruction produced a sparse point cloud, but the quality was not satisfactory. The reconstruction had gaps and inconsistencies that made it unsuitable for visualization.
+
+\subsection{Improved Approach: Using Professional Photogrammetry}
+Instead of relying solely on our SfM implementation, we switched to Agisoft MetaShape, a professional photogrammetry software. MetaShape provides:
+
+\begin{itemize}
+    \item Simultaneous processing of multiple images (not just pairs)
+    \item Automatic feature detection and matching optimized for photogrammetry
+    \item Bundle adjustment that jointly optimizes all camera poses and 3D points
+    \item Filtering of outliers and automatic removal of duplicates
+    \item Dense point cloud generation
+\end{itemize}
+
+Using MetaShape on our initial image set produced better results, but we found the point cloud quality could be further improved.
+
+\subsection{Final Approach: Capturing More Images}
+To achieve higher reconstruction quality, we captured additional photographs of the scene from more viewpoints. We then reprocessed all images (both original and new) using MetaShape. This larger and more diverse image set resulted in a significantly higher-quality point cloud with better coverage and fewer holes. The final point cloud was saved in PLY format with per-vertex color information.
